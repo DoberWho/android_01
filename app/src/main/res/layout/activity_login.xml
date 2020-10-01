@@ -85,6 +85,30 @@
             android:inputType="textPassword"
             android:paddingTop="5dp"
             android:paddingBottom="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <CheckBox
+                android:id="@+id/act_login_remember_chk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="@string/remember_lbl"
+                android:textColor="@color/black_overlay" />
+
+            <Button
+                android:id="@+id/act_login_recovery_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:padding="5dp"
+                android:paddingStart="16dp"
+                android:text="@string/password_recovery" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -95,5 +119,48 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@+id/act_login_form_lin"
         app:layout_constraintStart_toStartOf="@+id/act_login_form_lin"
-        app:layout_constraintTop_toBottomOf="@+id/act_login_form_lin"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/act_login_form_lin">
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/BotonAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="42dp"
+            android:background="@drawable/rounded_corners"
+            android:text="Button" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

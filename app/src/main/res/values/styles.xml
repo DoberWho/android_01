@@ -32,4 +32,10 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="BotonAction" parent="android:Widget.Material.Button">
+        <item name="backgroundTint">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
 </resources>

@@ -10,4 +10,6 @@
     <string name="register_btn">Crea Tu Cuenta</string>
     <string name="email_hint">E-Mail</string>
     <string name="password_hint">Tu Contraseña</string>
+    <string name="remember_lbl">Recuerdame</string>
+    <string name="password_recovery">¿Olvidaste la Pass?</string>
 </resources>
