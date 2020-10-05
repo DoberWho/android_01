@@ -35,6 +35,15 @@
     <style name="BotonAction" parent="android:Widget.Material.Button">
         <item name="backgroundTint">@color/colorPrimaryDark</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/rounded_corners</item>
+    </style>
+
+    <style name="BotonSocial" parent="BotonAction">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:background">@drawable/rounded_corners</item>
     </style>
 
 </resources>

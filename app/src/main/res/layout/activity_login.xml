@@ -130,7 +130,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="42dp"
-            android:background="@drawable/rounded_corners"
             android:text="Button" />
 
         <TextView
@@ -149,24 +148,30 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
+                style="@style/BotonSocial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_password" />
+                android:background="@drawable/rounded_corners_facebook"
+                app:srcCompat="@drawable/facebook" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
+                style="@style/BotonSocial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_password" />
+                android:background="@drawable/rounded_corners_github"
+                app:srcCompat="@drawable/github" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
+                style="@style/BotonSocial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_password" />
+                android:background="@drawable/rounded_corners_google"
+                app:srcCompat="@drawable/google" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
