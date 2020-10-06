@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -130,7 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="42dp"
-            android:text="Button" />
+            android:text="@string/title_login" />
 
         <TextView
             android:layout_width="match_parent"
