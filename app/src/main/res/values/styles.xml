@@ -32,9 +32,19 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="BotonNoBack" parent="android:Widget.Material.Button">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="fontStyle">normal</item>
+        <item name="fontWeight">400</item>
+        <item name="fontFamily">sans-serif-condensed</item>
+        <item name="color">@color/texto_rojo</item>
+    </style>
+
     <style name="BotonAction" parent="android:Widget.Material.Button">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@drawable/rounded_corners</item>
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+
     </style>
 
     <style name="BotonSocial" parent="BotonAction">

@@ -4,19 +4,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login"
     tools:context=".RegisterActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="339dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginBottom="373dp"
-        android:text="Registro"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/act_register_title_lin"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="right|top"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_title"
+            android:textAppearance="@style/Titulo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/act_register_register_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:padding="5dp"
+                android:textColor="@color/black_overlay"
+                style="@style/BotonNoBack"
+                android:text="@string/register_got_account" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/act_register_form_lin"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/act_register_title_lin"
+        app:layout_constraintStart_toStartOf="@+id/act_register_title_lin"
+        app:layout_constraintTop_toBottomOf="@+id/act_register_title_lin">
+
+        <EditText
+            android:id="@+id/act_register_email_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_usuario"
+            android:ems="10"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="15dp" />
+
+        <EditText
+            android:id="@+id/act_register_password_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="5dp"
+            android:drawableEnd="@drawable/ic_password"
+            android:ems="10"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:paddingTop="5dp"
+            android:paddingBottom="15dp" />
+
+        <EditText
+            android:id="@+id/act_register_password_confirm_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="5dp"
+            android:drawableEnd="@drawable/ic_password"
+            android:ems="10"
+            android:hint="@string/password_confirm_hint"
+            android:inputType="textPassword"
+            android:paddingTop="5dp"
+            android:paddingBottom="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/act_register_buttons_lin"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/act_register_form_lin"
+        app:layout_constraintStart_toStartOf="@+id/act_register_form_lin"
+        app:layout_constraintTop_toBottomOf="@+id/act_register_form_lin">
+
+        <Button
+            android:id="@+id/act_register_action_btn"
+            style="@style/BotonAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="42dp"
+            android:text="@string/register_btn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/login_with"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="100"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/act_register_facebook_btn"
+                style="@style/BotonSocial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="33"
+                android:background="@drawable/rounded_corners_facebook"
+                app:srcCompat="@drawable/facebook" />
+
+            <ImageButton
+                android:id="@+id/act_register_github_btn"
+                style="@style/BotonSocial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="33"
+                android:background="@drawable/rounded_corners_github"
+                app:srcCompat="@drawable/github" />
+
+            <ImageButton
+                android:id="@+id/act_register_google_btn"
+                style="@style/BotonSocial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="33"
+                android:background="@drawable/rounded_corners_google"
+                app:srcCompat="@drawable/google" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,11 @@
     <string name="title_login">Login</string>
     <string name="not_account">¿No Tienes Cuenta?</string>
     <string name="register_btn">Crea Tu Cuenta</string>
+    <string name="register_title">Registro</string>
+    <string name="register_got_account">¿Tienes Cuenta?</string>
     <string name="email_hint">E-Mail</string>
     <string name="password_hint">Tu Contraseña</string>
+    <string name="password_confirm_hint">Confirma Contraseña</string>
     <string name="remember_lbl">Recuerdame</string>
     <string name="password_recovery">¿Olvidaste la Pass?</string>
     <string name="login_with">Login Social</string>
