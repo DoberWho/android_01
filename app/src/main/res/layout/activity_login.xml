@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/act_login_form_lin">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/act_login_action_btn"
             style="@style/BotonAction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,7 +133,6 @@
             android:text="Button" />
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -144,32 +143,33 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:weightSum="100"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/act_login_facebook_btn"
                 style="@style/BotonSocial"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="33"
                 android:background="@drawable/rounded_corners_facebook"
                 app:srcCompat="@drawable/facebook" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/act_login_github_btn"
                 style="@style/BotonSocial"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="33"
                 android:background="@drawable/rounded_corners_github"
                 app:srcCompat="@drawable/github" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/act_login_google_btn"
                 style="@style/BotonSocial"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="33"
                 android:background="@drawable/rounded_corners_google"
                 app:srcCompat="@drawable/google" />
         </LinearLayout>

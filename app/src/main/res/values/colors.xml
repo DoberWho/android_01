@@ -14,4 +14,8 @@
     <color name="texto_normal">#5C6BC0</color>
     <color name="texto_accent">#EF5350</color>
     <color name="texto_rojo">#F44336</color>
+
+    <color name="red">#f00</color>
+    <color name="green">#0f0</color>
+    <color name="blue">#00f</color>
 </resources>
