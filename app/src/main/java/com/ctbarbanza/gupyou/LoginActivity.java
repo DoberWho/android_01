@@ -43,6 +43,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        Button btnRecovery = findViewById(R.id.act_login_recovery_btn);
+        btnRecovery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               doRecovery();
+            }
+
+            private void doRecovery() {
+            }
+        });
+
     }
 
     private void doLogin(){
