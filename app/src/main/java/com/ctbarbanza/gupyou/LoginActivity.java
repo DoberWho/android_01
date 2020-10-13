@@ -49,11 +49,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                doRecovery();
             }
-
-            private void doRecovery() {
-            }
         });
 
+    }
+
+    private void doRecovery() {
     }
 
     private void doLogin(){
