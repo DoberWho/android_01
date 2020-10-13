@@ -54,6 +54,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void doRecovery() {
+        Intent intent = new Intent(this, RecoveryActivity.class);
+        startActivity(intent);
     }
 
     private void doLogin(){
