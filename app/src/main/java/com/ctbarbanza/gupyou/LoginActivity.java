@@ -50,21 +50,21 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button btnFacebook = findViewById(R.id.act_login_recovery_btn);
+        ImageButton btnFacebook = findViewById(R.id.act_login_facebook_btn);
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 doLoginFacebook();
             }
         });
-        Button btnGithub = findViewById(R.id.act_login_recovery_btn);
+        ImageButton btnGithub = findViewById(R.id.act_login_github_btn);
         btnGithub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 doLoginGithub();
             }
         });
-        Button btnGoogle = findViewById(R.id.act_login_recovery_btn);
+        ImageButton btnGoogle = findViewById(R.id.act_login_google_btn);
         btnGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
