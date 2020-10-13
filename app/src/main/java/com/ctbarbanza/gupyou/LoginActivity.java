@@ -26,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button btnRegistro = findViewById(R.id.act_login_register_btn);
-
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +50,37 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        Button btnFacebook = findViewById(R.id.act_login_recovery_btn);
+        btnFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doLoginFacebook();
+            }
+        });
+        Button btnGithub = findViewById(R.id.act_login_recovery_btn);
+        btnGithub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doLoginGithub();
+            }
+        });
+        Button btnGoogle = findViewById(R.id.act_login_recovery_btn);
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doLoginGoogle();
+            }
+        });
+
+    }
+
+    private void doLoginGoogle() {
+    }
+
+    private void doLoginGithub() {
+    }
+
+    private void doLoginFacebook() {
     }
 
     private void doRecovery() {
