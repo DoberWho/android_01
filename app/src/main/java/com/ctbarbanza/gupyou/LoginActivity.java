@@ -16,15 +16,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+        initButtons();
+    }
 
+    private void initButtons() {
         Button btnRegistro = findViewById(R.id.act_login_register_btn);
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         btnRecovery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               doRecovery();
+                doRecovery();
             }
         });
 
@@ -71,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
                 doLoginGoogle();
             }
         });
-
     }
 
     private void doLoginGoogle() {
