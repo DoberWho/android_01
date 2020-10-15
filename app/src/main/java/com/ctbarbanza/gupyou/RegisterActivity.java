@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.ctbarbanza.gupyou.main.MainActivity;
+
 public class RegisterActivity extends AppCompatActivity {
 
 

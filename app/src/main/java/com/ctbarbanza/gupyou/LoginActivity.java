@@ -7,11 +7,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ctbarbanza.gupyou.main.MainActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
