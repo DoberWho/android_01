@@ -21,6 +21,7 @@
 
         <ImageButton
             android:id="@+id/imageButton"
+            style="@style/BotonNoBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="19"
@@ -30,6 +31,7 @@
 
         <ImageButton
             android:id="@+id/imageButton2"
+            style="@style/BotonNoBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="19"
@@ -49,6 +51,7 @@
 
         <ImageButton
             android:id="@+id/imageButton4"
+            style="@style/BotonNoBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="19"
@@ -58,6 +61,7 @@
 
         <ImageButton
             android:id="@+id/imageButton5"
+            style="@style/BotonNoBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="19"
