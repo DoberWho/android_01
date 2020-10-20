@@ -1,4 +1,4 @@
-package com.ctbarbanza.gupyou;
+package com.ctbarbanza.gupyou.auth;
 
 import android.os.Bundle;
 
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.ctbarbanza.gupyou.R;
 
 
 public class LoginFragment extends Fragment {

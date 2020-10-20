@@ -1,8 +1,10 @@
-package com.ctbarbanza.gupyou;
+package com.ctbarbanza.gupyou.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ctbarbanza.gupyou.R;
 
 public class AuthActivity extends AppCompatActivity {
 
