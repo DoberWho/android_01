@@ -24,14 +24,31 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.frg_login, container, false);
-        Button btn = v.findViewById(R.id.frg_login_action_btn);
+        Button btn = v.findViewById(R.id.frg_login_register_btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                changeFragment();
+            }
+        });
+
+        Button btnAction = v.findViewById(R.id.frg_login_action_btn);
+        btnAction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToMain();
             }
         });
 
         return v;
+    }
+
+    private void goToMain() {
+        ((AuthActivity)getActivity()).irAMain();
+    }
+
+    private void changeFragment() {
+        // Avisar para cambiar al otro fragment
+        ((AuthActivity)getActivity()).cambiarDeFragment(false);
     }
 }

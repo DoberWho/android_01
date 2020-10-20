@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".RecoveryActivity"></activity>
-        <activity android:name=".auth.AuthActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".main.MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_login"
             android:theme="@style/FullscreenTheme">
