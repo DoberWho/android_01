@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       initButtons();
+        initButtons();
+        initFragment();
     }
 
     private void initButtons(){
@@ -65,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initFragment() {
+        cambiarFragment(this.frg01);
     }
 
     private void cambiarFragment(Fragment frg){
