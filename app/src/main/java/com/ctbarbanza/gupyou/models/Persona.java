@@ -10,7 +10,7 @@ public class Persona implements Serializable {
     private String name;
     private String lastName;
 
-    private String image = "https://picsum.photos/200";
+    private String image = "https://i.imgur.com/iYnIUss.jpeg";
 
     private String gmail;
     private String faceook;

@@ -3,9 +3,11 @@ package com.ctbarbanza.gupyou;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ctbarbanza.gupyou.models.Persona;
+import com.squareup.picasso.Picasso;
 
 public class PersonaDetalleActivity extends AppCompatActivity {
 
@@ -14,6 +16,7 @@ public class PersonaDetalleActivity extends AppCompatActivity {
     private Persona persona;
 
     private TextView txtName, txtLastName, txtFacebook, txtGithub, txtGoogle;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,14 @@ public class PersonaDetalleActivity extends AppCompatActivity {
         txtFacebook.setText(persona.getFaceook());
         txtGithub.setText(persona.getGithub());
         txtGoogle.setText(persona.getGmail());
+
+        String url = persona.getImage();
+        Picasso.get()
+                .load(url)
+                .fit()
+                .placeholder(R.drawable.ic_usuario)
+                .error(R.drawable.ic_alert)
+                .into(image);
     }
 
     private void initView(){
@@ -45,6 +56,8 @@ public class PersonaDetalleActivity extends AppCompatActivity {
         txtFacebook = findViewById(R.id.act_persona_detalle_facebook_txt);
         txtGithub = findViewById(R.id.act_persona_detalle_github_txt);
         txtGoogle = findViewById(R.id.act_persona_detalle_google_txt);
+
+        image = findViewById(R.id.act_persona_detalle_image);
 
     }
 }
