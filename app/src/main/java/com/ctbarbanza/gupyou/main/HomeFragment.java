@@ -2,6 +2,7 @@ package com.ctbarbanza.gupyou.main;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.ctbarbanza.gupyou.PersonaDetalleActivity;
 import com.ctbarbanza.gupyou.R;
 import com.ctbarbanza.gupyou.adapter.PersonaAdapter;
 import com.ctbarbanza.gupyou.adapter.listeners.PersonaAdapterListener;
@@ -41,7 +43,7 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
-    private void initButtons(View v) { 
+    private void initButtons(View v) {
     }
 
     private void initData(View v) {
@@ -55,7 +57,7 @@ public class HomeFragment extends Fragment {
         PersonaAdapterListener listener = new PersonaAdapterListener() {
             @Override
             public void click(Persona item, int position) {
-
+                irADetalle(item);
             }
         };
 
@@ -65,9 +67,18 @@ public class HomeFragment extends Fragment {
         GridLayoutManager gridManager = new GridLayoutManager(ctx, 4);
 
         RecyclerView contenedor = v.findViewById(R.id.frg_home_container);
-        contenedor.setLayoutManager(mLayoutManager);
+        contenedor.setLayoutManager(gridManager);
 
         PersonaAdapter adaptador = new PersonaAdapter(ctx, personas, listener);
         contenedor.setAdapter(adaptador);
+    }
+
+    private void irADetalle(Persona item) {
+
+        Activity ctx = getActivity();
+
+        Intent intent = new Intent(ctx, PersonaDetalleActivity.class);
+        intent.putExtra(PersonaDetalleActivity.BUNDLE_PERSONA, item);
+        startActivity(intent);
     }
 }

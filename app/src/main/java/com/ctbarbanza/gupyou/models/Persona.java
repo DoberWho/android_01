@@ -1,6 +1,10 @@
 package com.ctbarbanza.gupyou.models;
 
-public class Persona {
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Persona implements Serializable {
 
     private Long id;
     private String name;
