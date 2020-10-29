@@ -41,14 +41,7 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
-    private void initButtons(View v) {
-        Button btnAction = v.findViewById(R.id.frg_home_action_btn);
-        btnAction.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+    private void initButtons(View v) { 
     }
 
     private void initData(View v) {
