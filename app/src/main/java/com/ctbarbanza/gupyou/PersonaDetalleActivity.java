@@ -40,11 +40,11 @@ public class PersonaDetalleActivity extends AppCompatActivity {
 
     private void initView(){
         txtName = findViewById(R.id.act_persona_detalle_name_txt);
-        txtLastName = findViewById(R.id.act_persona_detalle_name_txt);
+        txtLastName = findViewById(R.id.act_persona_detalle_lastname_txt);
 
-        txtFacebook = findViewById(R.id.act_persona_detalle_name_txt);
-        txtGithub = findViewById(R.id.act_persona_detalle_name_txt);
-        txtGoogle = findViewById(R.id.act_persona_detalle_name_txt);
+        txtFacebook = findViewById(R.id.act_persona_detalle_facebook_txt);
+        txtGithub = findViewById(R.id.act_persona_detalle_github_txt);
+        txtGoogle = findViewById(R.id.act_persona_detalle_google_txt);
 
     }
 }
