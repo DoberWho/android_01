@@ -7,7 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ctbarbanza.gupyou.models.Persona;
-import com.squareup.picasso.Picasso;
+
+import agency.tango.android.avatarview.views.AvatarView;
+import agency.tango.android.avatarviewglide.GlideLoader;
 
 public class PersonaDetalleActivity extends AppCompatActivity {
 
@@ -16,7 +18,7 @@ public class PersonaDetalleActivity extends AppCompatActivity {
     private Persona persona;
 
     private TextView txtName, txtLastName, txtFacebook, txtGithub, txtGoogle;
-    private ImageView image;
+    private AvatarView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +43,10 @@ public class PersonaDetalleActivity extends AppCompatActivity {
         txtGoogle.setText(persona.getGmail());
 
         String url = persona.getImage();
-        Picasso.get()
-                .load(url)
-                .fit()
-                .placeholder(R.drawable.ic_usuario)
-                .error(R.drawable.ic_alert)
-                .into(image);
+
+        // TODO: Arreglar esto
+        GlideLoader imageLoader = new GlideLoader();
+        //imageLoader.loadImage(image, url, persona.getName());
     }
 
     private void initView(){

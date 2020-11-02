@@ -17,12 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <agency.tango.android.avatarview.views.AvatarView
             android:id="@+id/act_persona_detalle_image"
             android:layout_width="50dp"
             android:layout_height="250dp"
             android:layout_weight="50"
-            app:srcCompat="@drawable/ic_usuario" />
+            app:av_border_color="@android:color/white"
+            app:av_border_width="4dp"
+            app:av_text_size_percentage="35" />
+
 
         <LinearLayout
             android:layout_width="0dp"
