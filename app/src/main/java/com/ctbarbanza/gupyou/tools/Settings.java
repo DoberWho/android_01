@@ -3,9 +3,8 @@ package com.ctbarbanza.gupyou.tools;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.ctbarbanza.gupyou.R;
 
-class Settings {
+public class Settings {
 
     private SharedPreferences sharedPref;
 

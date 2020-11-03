@@ -13,6 +13,7 @@ import com.ctbarbanza.gupyou.R;
 import com.ctbarbanza.gupyou.main.HomeFragment;
 import com.ctbarbanza.gupyou.main.MainActivity;
 import com.ctbarbanza.gupyou.main.MessageFragment;
+import com.ctbarbanza.gupyou.tools.Settings;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -25,6 +26,14 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.act_auth);
 
         initView();
+        checkLoging();
+    }
+
+    private void checkLoging() {
+        String user = Settings.init(this).getString("user");
+        if (user != null && !user.isEmpty()){
+            irAMain();
+        }
     }
 
     private void initView() {
@@ -55,5 +64,6 @@ public class AuthActivity extends AppCompatActivity {
     public void irAMain() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

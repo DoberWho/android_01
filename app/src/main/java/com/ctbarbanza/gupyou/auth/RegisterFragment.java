@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.ctbarbanza.gupyou.R;
+import com.ctbarbanza.gupyou.tools.Settings;
 
 public class RegisterFragment extends Fragment {
 
@@ -38,6 +39,7 @@ public class RegisterFragment extends Fragment {
     }
 
     private void goToMain() {
+        Settings.init( getActivity() ).save("user", "USER01");
         ((AuthActivity)getActivity()).irAMain();
     }
 
