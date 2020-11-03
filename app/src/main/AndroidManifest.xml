@@ -14,8 +14,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PersonaDetalleActivity"></activity>
         <activity android:name=".RecoveryActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
         <activity android:name=".main.MainActivity" />
         <activity
             android:name=".auth.AuthActivity"
