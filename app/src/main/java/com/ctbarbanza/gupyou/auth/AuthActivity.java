@@ -14,6 +14,7 @@ import com.ctbarbanza.gupyou.main.HomeFragment;
 import com.ctbarbanza.gupyou.main.MainActivity;
 import com.ctbarbanza.gupyou.main.MessageFragment;
 import com.ctbarbanza.gupyou.tools.Settings;
+import com.orhanobut.hawk.Hawk;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class AuthActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_auth);
+
+        Hawk.init(this).build();
 
         initView();
         checkLoging();

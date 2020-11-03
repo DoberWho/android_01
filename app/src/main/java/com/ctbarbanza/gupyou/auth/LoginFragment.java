@@ -58,18 +58,7 @@ public class LoginFragment extends Fragment {
         per.setFaceook("FacebookData");
         per.setGithub("GitHubData");
 
-        String serializedObject = "";
-        try {
-            ByteArrayOutputStream bo = new ByteArrayOutputStream();
-            ObjectOutputStream so = new ObjectOutputStream(bo);
-            so.writeObject(per);
-            so.flush();
-            serializedObject = bo.toString();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-        settings.save("userData", serializedObject);
+        settings.save("userData", per);
 
         ((AuthActivity)getActivity()).irAMain();
     }

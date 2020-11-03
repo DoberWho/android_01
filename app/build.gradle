@@ -50,4 +50,6 @@ dependencies {
 
     implementation 'agency.tango.android:avatar-view-glide:0.0.2'
 
+    implementation "com.orhanobut:hawk:2.0.1"
+
 }

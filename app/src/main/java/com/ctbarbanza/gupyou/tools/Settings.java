@@ -3,6 +3,8 @@ package com.ctbarbanza.gupyou.tools;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.orhanobut.hawk.Hawk;
+
 import java.io.Serializable;
 
 
@@ -28,25 +30,30 @@ public class Settings {
         editor.commit();
     }
 
-    public void save(String key, String value){
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(key, value);
-        editor.commit();
+    public void save(String key, Object value){
+        Hawk.put(key, value);
     }
 
     public String getString(String key){
-        return  sharedPref.getString(key,"");
-    }
-
-    public void save(String key, Float value){
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putFloat(key, value);
-        editor.commit();
+        if (!Hawk.contains(key)){
+            return "";
+        }
+        return Hawk.get(key);
     }
 
     public Float getFloat(String key){
         float valorPorDefecto = 0;
-        return  sharedPref.getFloat(key,valorPorDefecto);
+        if (!Hawk.contains(key)){
+            return valorPorDefecto;
+        }
+        return Hawk.get(key);
+    }
+
+    public Object getObject(String key){
+        if (!Hawk.contains(key)){
+            return null;
+        }
+        return Hawk.get(key);
     }
 
 
