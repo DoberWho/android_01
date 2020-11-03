@@ -25,9 +25,7 @@ public class Settings {
     }
 
     public void remove(String key){
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.remove(key);
-        editor.commit();
+        Hawk.delete(key);
     }
 
     public void save(String key, Object value){
