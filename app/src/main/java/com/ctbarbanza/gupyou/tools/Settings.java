@@ -3,6 +3,8 @@ package com.ctbarbanza.gupyou.tools;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.io.Serializable;
+
 
 public class Settings {
 

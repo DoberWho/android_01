@@ -11,7 +11,11 @@ import android.widget.Button;
 
 import com.ctbarbanza.gupyou.R;
 
+import com.ctbarbanza.gupyou.models.Persona;
 import com.ctbarbanza.gupyou.tools.Settings;
+
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectOutputStream;
 
 
 public class LoginFragment extends Fragment {
@@ -46,7 +50,27 @@ public class LoginFragment extends Fragment {
     }
 
     private void goToMain() {
-        Settings.init( getActivity() ).save("user", "USER01");
+        Settings settings = Settings.init(getActivity());
+        settings.save("user", "USER01");
+        Persona per = new Persona(1);
+        per.setLastName("Apellido");
+        per.setGmail("GmailData");
+        per.setFaceook("FacebookData");
+        per.setGithub("GitHubData");
+
+        String serializedObject = "";
+        try {
+            ByteArrayOutputStream bo = new ByteArrayOutputStream();
+            ObjectOutputStream so = new ObjectOutputStream(bo);
+            so.writeObject(per);
+            so.flush();
+            serializedObject = bo.toString();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        settings.save("userData", serializedObject);
+
         ((AuthActivity)getActivity()).irAMain();
     }
 
