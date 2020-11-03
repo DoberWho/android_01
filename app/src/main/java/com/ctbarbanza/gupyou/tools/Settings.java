@@ -20,6 +20,12 @@ public class Settings {
         return instance;
     }
 
+    public void remove(String key){
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.remove(key);
+        editor.commit();
+    }
+
     public void save(String key, String value){
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(key, value);
