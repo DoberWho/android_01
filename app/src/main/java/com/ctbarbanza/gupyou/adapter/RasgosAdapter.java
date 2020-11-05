@@ -17,7 +17,7 @@ public class RasgosAdapter extends ArrayAdapter<Rasgo> {
     private static final int LAYOUT = R.layout.rasgo_adapter_item;
 
     public RasgosAdapter(Context context, ArrayList<Rasgo> users) {
-       super(context, 0, users);
+       super(context, LAYOUT, users);
     }
 
     @Override
