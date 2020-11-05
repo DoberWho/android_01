@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.FrameLayout;
 
 import com.ctbarbanza.gupyou.R;
@@ -15,6 +16,8 @@ import com.ctbarbanza.gupyou.main.MainActivity;
 import com.ctbarbanza.gupyou.main.MessageFragment;
 import com.ctbarbanza.gupyou.tools.Settings;
 import com.orhanobut.hawk.Hawk;
+
+import java.util.Timer;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -30,6 +33,20 @@ public class AuthActivity extends AppCompatActivity {
 
         initView();
         checkLoging();
+        goToAnother();
+    }
+
+    private void goToAnother() {
+
+        Handler handler = new Handler();
+        Runnable runnable;
+        handler.postDelayed(runnable = new Runnable() {
+            public void run() {
+                //irAMain();
+            }
+        }, 1000);
+
+
     }
 
     private void checkLoging() {
