@@ -1,6 +1,7 @@
 package com.ctbarbanza.gupyou.main;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         initButtons();
         initFragment();
+        testLogs();
     }
+
 
     private void initButtons(){
         ImageButton btn01 = findViewById(R.id.imageButton);
@@ -79,5 +82,19 @@ public class MainActivity extends AppCompatActivity {
         trans.replace(R.id.act_main_container, frg, "fragment_01");
 
         trans.commit();
+        Log.v("FRAGMENT", "He cambiado de Pantalla");
+    }
+
+
+    private void testLogs() {
+
+        Log.v("VERBOSE", "Mensaje de Verbose");
+        Log.d("DEBUG", "Mensjae de Debug");
+        Log.i("INFO", "Mensaje de Info");
+        Log.w("WARNING", "Mensaje de Warning");
+        Log.e("ERROR", "Mensaje de Error");
+
+        Log.wtf("WTF", "Gollum, Ese es mi anillo.");
+
     }
 }
