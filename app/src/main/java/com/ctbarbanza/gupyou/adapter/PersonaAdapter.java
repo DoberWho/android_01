@@ -36,8 +36,7 @@ public class PersonaAdapter extends RecyclerView.Adapter<PersonaAdapter.PersonaH
     @NonNull
     @Override
     public PersonaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(layout, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
 
         return new PersonaHolder(itemView);
     }
