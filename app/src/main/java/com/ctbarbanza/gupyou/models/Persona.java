@@ -21,6 +21,11 @@ public class Persona implements Serializable {
         this.name = "Persona "+idx;
     }
 
+    public Persona(int idx, String name) {
+        this.id = Long.valueOf(idx);
+        this.name = name+" "+idx;
+    }
+
 
     public Long getId() {
         return id;

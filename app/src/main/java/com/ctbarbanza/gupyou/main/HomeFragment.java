@@ -48,25 +48,36 @@ public class HomeFragment extends Fragment {
 
     private void initData(View v) {
 
+        RecyclerView contenedor = v.findViewById(R.id.frg_home_container);
+        Activity ctx = getActivity();
+
         List<Persona> personas = new ArrayList<>();
 
-        for (int idx = 0; idx < 10; idx++) {
-            personas.add(new Persona(idx));
+        for (int idx = 0; idx < 100; idx++) {
+            personas.add(new Persona(1+idx));
         }
 
-        PersonaAdapterListener listener = new PersonaAdapterListener() {
+        final PersonaAdapterListener listener = new PersonaAdapterListener() {
             @Override
             public void click(Persona item, int position) {
-                irADetalle(item);
+               //
+                personas.clear();
+                for (int idx = 0; idx < 100; idx++) {
+                    personas.add(new Persona(1+idx, "Pulpo"));
+                }
+
+                PersonaAdapter adaptador = new PersonaAdapter(ctx, personas,  null);
+                contenedor.setAdapter(adaptador);
+
             }
         };
 
-        Activity ctx = getActivity();
+
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(ctx);
         LinearLayoutManager manager = new LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false);
-        GridLayoutManager gridManager = new GridLayoutManager(ctx, 4);
+        GridLayoutManager gridManager = new GridLayoutManager(ctx, 3);
 
-        RecyclerView contenedor = v.findViewById(R.id.frg_home_container);
+
         contenedor.setLayoutManager(gridManager);
 
         PersonaAdapter adaptador = new PersonaAdapter(ctx, personas, listener);
