@@ -32,27 +32,27 @@ public class Settings {
         Hawk.put(key, value);
     }
 
-    public String getString(String key){
+    private Object getObject(String key, Object defaultValue){
         if (!Hawk.contains(key)){
-            return "";
-        }
-        return Hawk.get(key);
-    }
-
-    public Float getFloat(String key){
-        float valorPorDefecto = 0;
-        if (!Hawk.contains(key)){
-            return valorPorDefecto;
+            return defaultValue;
         }
         return Hawk.get(key);
     }
 
     public Object getObject(String key){
-        if (!Hawk.contains(key)){
-            return null;
-        }
-        return Hawk.get(key);
+        return this.getObject(key, null);
     }
 
+    public String getString(String key){
+        return (String) this.getObject(key, "");
+    }
 
+    public Float getFloat(String key){
+        float valorPorDefecto = 0;
+        return (Float) this.getObject(key, valorPorDefecto);
+    }
+
+    public boolean getBoolean(String key) {
+        return (Boolean) this.getObject(key, false);
+    }
 }
