@@ -22,7 +22,7 @@ import com.ctbarbanza.gupyou.tools.Settings;
 public class SettingsFragment extends Fragment {
 
 
-    private Button btnLogout, btnOthers;
+    private Button btnLogout, btnOthers, btnLegal;
     private CheckBox check;
 
     // Editar Perfil de Usuario
@@ -60,6 +60,13 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        btnLegal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCustomDialog();
+            }
+        });
+
         check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -74,9 +81,26 @@ public class SettingsFragment extends Fragment {
         check = v.findViewById(R.id.frg_settting_notifications_check);
         btnLogout = v.findViewById(R.id.frg_settings_logout_btn);
         btnOthers = v.findViewById(R.id.frg_settings_others_btn);
+        btnLegal  = v.findViewById(R.id.frg_settings_legal_btn);
 
     }
 
+    private void showCustomDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+
+        View v = inflater.inflate(R.layout.dialog_legal_terms, null);
+        builder.setView(v)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        // sign in the user ...
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
     private void showAlertDialog(){
 
