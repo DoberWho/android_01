@@ -89,10 +89,20 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp" />
 
+        <TextView
+            android:id="@+id/frg_comment_current_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:text="VALOR"/>
+
         <SeekBar
             android:id="@+id/frg_comment_seekbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:min="1"
+            android:max="6"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
