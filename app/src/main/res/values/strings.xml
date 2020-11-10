@@ -19,6 +19,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="current_value_comment_label">Tu valor es %d de %s </string>
+    <string name="logout_btn_label">logout</string>
+    <string name="notifications_label">Recibir Notificaciones</string>
+    <string name="edit_profile_btn">Editar Perfil</string>
+    <string name="change_password_btn_label">Cambiar Pass</string>
+    <string name="legal_btn_label">Terminos de uso</string>
+    <string name="others">Otros</string>
     <string-array name="rasgos">
         <item>Higiene</item>
         <item>Dinero</item>
