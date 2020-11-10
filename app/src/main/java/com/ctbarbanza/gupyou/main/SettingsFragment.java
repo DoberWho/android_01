@@ -1,5 +1,7 @@
 package com.ctbarbanza.gupyou.main;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -20,7 +22,7 @@ import com.ctbarbanza.gupyou.tools.Settings;
 public class SettingsFragment extends Fragment {
 
 
-    private Button btnLogout;
+    private Button btnLogout, btnOthers;
     private CheckBox check;
 
     // Editar Perfil de Usuario
@@ -51,6 +53,12 @@ public class SettingsFragment extends Fragment {
                 doLogout();
             }
         });
+        btnOthers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAlertDialog();
+            }
+        });
 
         check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -65,6 +73,39 @@ public class SettingsFragment extends Fragment {
 
         check = v.findViewById(R.id.frg_settting_notifications_check);
         btnLogout = v.findViewById(R.id.frg_settings_logout_btn);
+        btnOthers = v.findViewById(R.id.frg_settings_others_btn);
+
+    }
+
+
+    private void showAlertDialog(){
+
+        // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+// 2. Chain together various setter methods to set the dialog characteristics
+        builder.setMessage(R.string.alert_dialog_msg)
+                .setTitle(R.string.alert_dialog_title);
+
+// 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
+
+
+// Add the buttons
+        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
+        builder.setCancelable(false);
+        // Set other dialog properties
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
 
     }
 

@@ -25,6 +25,8 @@
     <string name="change_password_btn_label">Cambiar Pass</string>
     <string name="legal_btn_label">Terminos de uso</string>
     <string name="others">Otros</string>
+    <string name="alert_dialog_msg">Mensaje de Dialog Alert</string>
+    <string name="alert_dialog_title">Titulo de Alert</string>
     <string-array name="rasgos">
         <item>Higiene</item>
         <item>Dinero</item>

@@ -50,7 +50,7 @@
                 android:text="@string/edit_profile_btn" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/frg_settings_others_btn"
                 style="@style/BotonNoBack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
