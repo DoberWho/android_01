@@ -37,6 +37,9 @@ In mattis est felis, ac fermentum massa venenatis tincidunt. Suspendisse vitae p
 Vestibulum dignissim euismod luctus. Cras ut dui nulla. Ut non purus malesuada, molestie tortor sit amet, lobortis diam. Sed eleifend, leo varius fermentum sagittis, tellus quam pretium nisi, ac pharetra urna diam at urna. Donec nec ligula velit. Aliquam in neque hendrerit, cursus magna non, dapibus enim. Integer facilisis porttitor nibh. Praesent posuere magna non ligula ullamcorper, non consequat ligula lacinia. Nam egestas purus in consectetur auctor. Donec rutrum blandit ligula eget euismod. Nulla sodales at risus et scelerisque. Praesent ut urna sit amet augue interdum facilisis non eu ante.
 
 Aliquam consequat ante quis eros porttitor, elementum egestas quam suscipit. Cras faucibus leo efficitur libero fermentum, non ornare felis imperdiet. Morbi malesuada maximus imperdiet. Nullam accumsan elementum purus, sit amet ullamcorper nibh efficitur eget. Proin iaculis libero in volutpat venenatis. Quisque eu ipsum massa. Nulla eget tincidunt ipsum. Vivamus at nisl vitae purus ultrices bibendum. Curabitur malesuada tempor suscipit. Mauris eleifend, nunc id tempus eleifend, urna nisl fringilla ligula, ac condimentum lectus magna vitae purus. Duis efficitur eros quis tempus laoreet. Aenean id dui eu lorem egestas hendrerit in sit amet lorem. Etiam vitae odio aliquam, ornare elit nec, gravida ipsum.</string>
+    <string name="change_pass_title">Cambiar Password</string>
+    <string name="change_pass_edt_lbl" >Nueva Contraseña</string>
+    <string name="change_pass_confirm_edt_lbl">Confirmar Pass</string>
     <string-array name="rasgos">
         <item>Higiene</item>
         <item>Dinero</item>

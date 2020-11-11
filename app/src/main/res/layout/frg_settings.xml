@@ -65,7 +65,7 @@
             android:padding="16dp">
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/frg_settings_change_pass_btn"
                 style="@style/BotonAction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 
 import com.ctbarbanza.gupyou.R;
 import com.ctbarbanza.gupyou.auth.AuthActivity;
@@ -22,7 +23,7 @@ import com.ctbarbanza.gupyou.tools.Settings;
 public class SettingsFragment extends Fragment {
 
 
-    private Button btnLogout, btnOthers, btnLegal;
+    private Button btnLogout, btnOthers, btnLegal, btnChangePass;
     private CheckBox check;
 
     // Editar Perfil de Usuario
@@ -63,7 +64,14 @@ public class SettingsFragment extends Fragment {
         btnLegal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showCustomDialog();
+                showDialogLegal();
+            }
+        });
+
+        btnChangePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogEditable();
             }
         });
 
@@ -82,10 +90,39 @@ public class SettingsFragment extends Fragment {
         btnLogout = v.findViewById(R.id.frg_settings_logout_btn);
         btnOthers = v.findViewById(R.id.frg_settings_others_btn);
         btnLegal  = v.findViewById(R.id.frg_settings_legal_btn);
-
+        btnChangePass = v.findViewById(R.id.frg_settings_change_pass_btn);
     }
 
-    private void showCustomDialog(){
+
+    private void showDialogEditable(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+
+        View v = inflater.inflate(R.layout.dialog_change_pass, null);
+        final EditText edtPass = v.findViewById(R.id.dialog_change_pass_pass_edt);
+        EditText edtPassConfirm = v.findViewById(R.id.dialog_change_pass_confirm_edt);
+        builder.setView(v)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        String pass = edtPass.getText().toString();
+                        String confirm = edtPassConfirm.getText().toString();
+
+                    }
+                }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+    private void showDialogLegal(){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = requireActivity().getLayoutInflater();
 
