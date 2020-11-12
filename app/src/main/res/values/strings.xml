@@ -40,6 +40,8 @@ Aliquam consequat ante quis eros porttitor, elementum egestas quam suscipit. Cra
     <string name="change_pass_title">Cambiar Password</string>
     <string name="change_pass_edt_lbl" >Nueva Contraseña</string>
     <string name="change_pass_confirm_edt_lbl">Confirmar Pass</string>
+    <string name="pass_confirm_ok">Contraseña Aceptada</string>
+    <string name="pass_confirm_ko">Contraseña No Valida</string>
     <string-array name="rasgos">
         <item>Higiene</item>
         <item>Dinero</item>
