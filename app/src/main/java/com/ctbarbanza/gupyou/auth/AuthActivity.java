@@ -1,5 +1,6 @@
 package com.ctbarbanza.gupyou.auth;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.ctbarbanza.gupyou.R;
@@ -15,12 +17,20 @@ import com.ctbarbanza.gupyou.main.HomeFragment;
 import com.ctbarbanza.gupyou.main.MainActivity;
 import com.ctbarbanza.gupyou.main.MessageFragment;
 import com.ctbarbanza.gupyou.tools.Settings;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.Timer;
 
 public class AuthActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
     LoginFragment    frgLogin    = new LoginFragment();
     RegisterFragment frgRegister = new RegisterFragment();
 
@@ -30,10 +40,17 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.act_auth);
 
         Hawk.init(this).build();
+        mAuth = FirebaseAuth.getInstance();
 
         initView();
         checkLoging();
         goToAnother();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        currentUser = mAuth.getCurrentUser();
     }
 
     private void goToAnother() {
@@ -85,5 +102,26 @@ public class AuthActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void register(String email, String pass) {
+        mAuth.createUserWithEmailAndPassword(email, pass)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            currentUser = mAuth.getCurrentUser();
+                            Log.d("USER", currentUser.getUid());
+                            irAMain();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                             Exception ex = task.getException();
+                             ex.printStackTrace();
+                             String error = ex.getLocalizedMessage();
+                            Snackbar.make(getCurrentFocus(), error, Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+                });
     }
 }
