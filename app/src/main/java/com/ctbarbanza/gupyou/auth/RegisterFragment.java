@@ -56,25 +56,25 @@ public class RegisterFragment extends Fragment {
         String pass = edtPass.getText().toString().trim();
         String confirm = edtConfirm.getText().toString().trim();
 
-        if (email.isEmpty() || pass.isEmpty() || confirm.isEmpty()){
-            if (email.isEmpty()){
-                String errorMsg = getString(R.string.error_email_empty);
-                edtEmail.setError(errorMsg);
-            }
-            if (pass.isEmpty()){
-                String errorMsg = getString(R.string.error_pass_empty);
-                edtPass.setError(errorMsg);
-            }
-            if (confirm.isEmpty()){
-                String errorMsg = getString(R.string.error_confirm_empty);
-                edtConfirm.setError(errorMsg);
-            }
-            String errorMsg = getString(R.string.error_registro_formulario);
-            Snackbar snack = Snackbar.make(v, errorMsg, Snackbar.LENGTH_LONG);
-            snack.show();
+
+        if (email.isEmpty()){
+            String errorMsg = getString(R.string.error_email_empty);
+            edtEmail.setError(errorMsg);
+            return;
+        }
+        if (pass.isEmpty()){
+            String errorMsg = getString(R.string.error_pass_empty);
+            edtPass.setError(errorMsg);
+            return;
+        }
+        if (confirm.isEmpty()){
+            String errorMsg = getString(R.string.error_confirm_empty);
+            edtConfirm.setError(errorMsg);
             return;
         }
         if (!pass.equals(confirm)){
+            String errorMsg = getString(R.string.error_confirm_not_equals);
+            edtConfirm.setError(errorMsg);
             return;
         }
 

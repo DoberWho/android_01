@@ -46,6 +46,7 @@ Aliquam consequat ante quis eros porttitor, elementum egestas quam suscipit. Cra
     <string name="error_email_empty">Correo Requerido</string>
     <string name="error_pass_empty">Contraseña Requerida</string>
     <string name="error_confirm_empty">Necesaria Confirmación</string>
+    <string name="error_confirm_not_equals">Contraseñas Son Diferentes</string>
     <string-array name="rasgos">
         <item>Higiene</item>
         <item>Dinero</item>
