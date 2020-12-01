@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initButtons(){
+
         ImageButton btn01 = findViewById(R.id.imageButton);
         ImageButton btn02 = findViewById(R.id.imageButton2);
         ImageButton btn03 = findViewById(R.id.imageButton3);
