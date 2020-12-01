@@ -107,6 +107,7 @@ public class AuthActivity extends AppCompatActivity {
     }
 
     public void register(String email, String pass) {
+
         mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
