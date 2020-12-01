@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.ctbarbanza.gupyou.R;
 
@@ -20,16 +21,20 @@ import java.io.ObjectOutputStream;
 
 public class LoginFragment extends Fragment {
 
-    public LoginFragment() {
-        // Required empty public constructor
-    }
 
+    private EditText edtEmail, edtPass;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.frg_login, container, false);
+        intiViews(v);
+
+        return v;
+    }
+
+    private void intiViews(View v) {
         Button btn = v.findViewById(R.id.frg_login_register_btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,11 +47,30 @@ public class LoginFragment extends Fragment {
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToMain();
+                comprobarFormulario(v);
             }
         });
+        edtEmail = v.findViewById(R.id.frg_login_email_edt);
+        edtPass = v.findViewById(R.id.frg_login_password_edt);
+    }
 
-        return v;
+    private void comprobarFormulario(View v) {
+        String email = edtEmail.getText().toString().trim();
+        String pass = edtPass.getText().toString().trim();
+
+        if (email.isEmpty()){
+            String errorMsg = getString(R.string.error_email_empty);
+            edtEmail.setError(errorMsg);
+            return;
+        }
+        if (pass.isEmpty()){
+            String errorMsg = getString(R.string.error_pass_empty);
+            edtPass.setError(errorMsg);
+            return;
+        }
+
+        ((AuthActivity)getActivity()).login(email, pass);
+
     }
 
     private void goToMain() {

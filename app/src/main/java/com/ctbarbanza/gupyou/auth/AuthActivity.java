@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -23,6 +24,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseUserMetadata;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.Timer;
@@ -112,6 +114,12 @@ public class AuthActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             currentUser = mAuth.getCurrentUser();
+                            String disp = currentUser.getDisplayName();
+                            String email = currentUser.getEmail();
+                            FirebaseUserMetadata meta = currentUser.getMetadata();
+                            Uri photo = currentUser.getPhotoUrl();
+                            String phone = currentUser.getPhoneNumber();
+                            String uid = currentUser.getUid();
                             Log.d("USER", currentUser.getUid());
                             irAMain();
                         } else {
@@ -119,6 +127,33 @@ public class AuthActivity extends AppCompatActivity {
                              Exception ex = task.getException();
                              ex.printStackTrace();
                              String error = ex.getLocalizedMessage();
+                            Snackbar.make(getCurrentFocus(), error, Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+                });
+    }
+
+    public void login(String email, String pass) {
+        mAuth.signInWithEmailAndPassword(email, pass)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            currentUser = mAuth.getCurrentUser();
+                            String disp = currentUser.getDisplayName();
+                            String email = currentUser.getEmail();
+                            FirebaseUserMetadata meta = currentUser.getMetadata();
+                            Uri photo = currentUser.getPhotoUrl();
+                            String phone = currentUser.getPhoneNumber();
+                            String uid = currentUser.getUid();
+                            Log.d("USER", currentUser.getUid());
+                            irAMain();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Exception ex = task.getException();
+                            ex.printStackTrace();
+                            String error = ex.getLocalizedMessage();
                             Snackbar.make(getCurrentFocus(), error, Snackbar.LENGTH_LONG).show();
                         }
                     }
