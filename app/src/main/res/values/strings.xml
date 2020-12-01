@@ -42,6 +42,10 @@ Aliquam consequat ante quis eros porttitor, elementum egestas quam suscipit. Cra
     <string name="change_pass_confirm_edt_lbl">Confirmar Pass</string>
     <string name="pass_confirm_ok">Contraseña Aceptada</string>
     <string name="pass_confirm_ko">Contraseña No Valida</string>
+    <string name="error_registro_formulario">Rellene los campos de Registro</string>
+    <string name="error_email_empty">Correo Requerido</string>
+    <string name="error_pass_empty">Contraseña Requerida</string>
+    <string name="error_confirm_empty">Necesaria Confirmación</string>
     <string-array name="rasgos">
         <item>Higiene</item>
         <item>Dinero</item>
